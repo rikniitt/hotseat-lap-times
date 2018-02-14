@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
     apt-get update
     debconf-set-selections <<< "mysql-server mysql-server/root_password password #{box_config[:mysql_root_password]}"
     debconf-set-selections <<< "mysql-server mysql-server/root_password_again password #{box_config[:mysql_root_password]}"
-    apt-get install -y curl apache2 libapache2-mod-php5.6 php5.6-curl php5.6-mcrypt mysql-server libapache2-mod-auth-mysql php5.6-mysql
+    apt-get install -y curl git zip unzip apache2 libapache2-mod-php5.6 php5.6-curl php5.6-mcrypt mysql-server libapache2-mod-auth-mysql php5.6-mysql php5.6-zip php5.6-mbstring php5.6-xml
     echo ServerName $HOSTNAME >> /etc/apache2/apache2.conf
     cat > /etc/apache2/sites-available/001-hotseat.conf <<EOL
 <VirtualHost *:80>
