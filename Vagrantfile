@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
     # Customize the amount of memory on the VM:
     vb.memory = "2048"
-    vb.gui = true
+    #vb.gui = true
   end
 
   box_config = {
@@ -55,7 +55,7 @@ Vagrant.configure("2") do |config|
 EOL
     a2dissite 000-default.conf; a2ensite 001-vagrant.conf; a2enmod rewrite; systemctl restart apache2.service
     curl -sL https://deb.nodesource.com/setup_8.x | bash -
-    apt-get install -y nodejs
+    apt-get install -y nodejs autoconf
   SHELL
 
   config.vm.provision "shell", privileged:false, inline: <<-SHELL
@@ -71,5 +71,6 @@ EOL
     php artisan key:generate
     php artisan migrate
     npm install
+    npm run dev
   SHELL
 end

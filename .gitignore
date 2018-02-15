@@ -2,6 +2,7 @@
 *.lock
 composer.phar
 ubuntu*.log
+package-lock.json
 
 /node_modules
 /public/hot
