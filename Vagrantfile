@@ -70,6 +70,7 @@ EOL
     mysql -h"$DB_HOST" -u"$DB_USERNAME" -p"$DB_PASSWORD" -e "CREATE DATABASE $DB_DATABASE"
     php artisan key:generate
     php artisan migrate
+    php artisan passport:install
     npm install
     npm run dev
   SHELL
